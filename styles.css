@@ -93,7 +93,8 @@ footer{padding:34px 0 46px}
 .work-grid{grid-template-columns:1fr}
 }
 @media(max-width:620px){
-.container{width:min(100% - 28px,1180px).system-links{display:none}}
+.container{width:min(100% - 28px,1180px)}
+.system-links{display:none}
 .brand strong{font-size:1.35rem}
 .brand small{font-size:.74rem}
 .hero{padding-top:56px}
