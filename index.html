@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Lógos — Una casa de desarrollo</title>
+<meta name="description" content="Casa Lógos construye, conecta, automatiza y evoluciona software pensado para tu caso.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+<div class="container nav">
+<a class="brand" href="#inicio" aria-label="Casa Lógos, inicio">
+<svg class="brand-mark" viewBox="0 0 120 120" aria-hidden="true">
+<path d="M22 53 60 20l38 33v36H78v14H68V89H52v14H42V89H22Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/>
+<path d="M40 50h40v27H67l-7 9-7-9H40Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="51" cy="64" r="3.5"/><circle cx="60" cy="64" r="3.5"/><circle cx="69" cy="64" r="3.5"/>
+<path d="M22 78H10M98 78h12M42 89v12M78 89v12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+<circle cx="8" cy="78" r="4" fill="none" stroke="currentColor" stroke-width="4"/>
+<circle cx="112" cy="78" r="4" fill="none" stroke="currentColor" stroke-width="4"/>
+<circle cx="42" cy="105" r="4" fill="none" stroke="currentColor" stroke-width="4"/>
+<circle cx="78" cy="105" r="4" fill="none" stroke="currentColor" stroke-width="4"/>
+<circle class="accent-dot" cx="95" cy="30" r="5"/>
+</svg>
+<span><strong>Casa Lógos</strong><small>Una casa de desarrollo</small></span>
+</a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menú</button>
+<nav id="menu" class="menu">
+<a href="#que-hacemos">Qué hacemos</a>
+<a href="#como-trabajamos">Cómo trabajamos</a>
+<a href="#trabajo">Trabajo</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section id="inicio" class="hero">
+<div class="container hero-grid">
+<div class="hero-copy">
+<p class="eyebrow">Casa Lógos · Una casa de desarrollo</p>
+<h1>Software pensado<br>para tu caso<span>.</span></h1>
+<p class="lead">Construimos, conectamos, automatizamos y evolucionamos software para resolver problemas reales sin complicar de más la solución.</p>
+<div class="hero-actions">
+<a class="btn primary" href="#contacto">Cuéntame qué necesitas resolver</a>
+<a class="btn secondary" href="#que-hacemos">Conoce lo que hacemos</a>
+</div>
+</div>
+
+<div class="system-visual" aria-label="Diagrama ilustrativo de software, integraciones y flujo de trabajo">
+<div class="node center-node">
+<svg viewBox="0 0 120 120" aria-hidden="true">
+<path d="M22 53 60 20l38 33v36H78v14H68V89H52v14H42V89H22Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/>
+<path d="M40 50h40v27H67l-7 9-7-9H40Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="51" cy="64" r="3.5"/><circle cx="60" cy="64" r="3.5"/><circle cx="69" cy="64" r="3.5"/>
+</svg>
+</div>
+<div class="panel integrations"><strong>Integraciones</strong><span>APIs</span><span>Servicios</span><span>Datos</span></div>
+<div class="panel api"><strong>API</strong><code>POST /api/proyectos<br>{ estado: "en_proceso" }<br><span>200 OK</span></code></div>
+<div class="panel progress"><strong>Panel de proyecto</strong><div class="spark"></div><small>Progreso 75%</small></div>
+<div class="panel database"><strong>Base de datos</strong><span>✓ Sincronizado</span></div>
+<div class="panel workflow"><strong>Flujo de trabajo</strong><span>✓ Requerimiento</span><span>✓ Análisis</span><span class="active">● Desarrollo</span><span>○ Pruebas</span><span>○ Entrega</span></div>
+</div>
+</div>
+</section>
+
+<section id="que-hacemos" class="section">
+<div class="container">
+<div class="section-heading">
+<p class="eyebrow">Qué hacemos</p>
+<h2>Cuatro formas de ayudarte a avanzar.</h2>
+</div>
+<div class="cards">
+<article class="card"><div class="icon">&lt;/&gt;</div><h3>Construir</h3><p>Aplicaciones, sistemas internos, herramientas web, backend y APIs con una arquitectura proporcional al problema.</p></article>
+<article class="card"><div class="icon">◎</div><h3>Conectar</h3><p>Integramos sistemas, servicios y flujos de información para que tus herramientas trabajen juntas.</p></article>
+<article class="card"><div class="icon">⚙</div><h3>Automatizar</h3><p>Reducimos tareas repetitivas y fricción operativa cuando existe una forma razonable de automatizarlas.</p></article>
+<article class="card"><div class="icon">↗</div><h3>Evolucionar</h3><p>Mejoramos software existente con nuevas capacidades, mantenimiento, pruebas y una base técnica más sólida.</p></article>
+</div>
+</div>
+</section>
+
+<section id="como-trabajamos" class="section alt">
+<div class="container">
+<div class="section-heading">
+<p class="eyebrow">Cómo trabajamos</p>
+<h2>Entender primero. Construir después.</h2>
+<p>No todo problema necesita un sistema enorme. Empezamos por comprender qué ocurre y qué vale la pena resolver.</p>
+</div>
+<ol class="steps">
+<li><span>01</span><strong>Entender</strong><p>Escuchamos el problema y el contexto real.</p></li>
+<li><span>02</span><strong>Delimitar</strong><p>Definimos alcance, riesgos y una solución proporcional.</p></li>
+<li><span>03</span><strong>Construir</strong><p>Desarrollamos con claridad sobre lo que sí y no incluye.</p></li>
+<li><span>04</span><strong>Probar</strong><p>Validamos antes de considerar una entrega terminada.</p></li>
+<li><span>05</span><strong>Entregar</strong><p>Dejamos evidencia, documentación y un siguiente paso claro.</p></li>
+<li><span>06</span><strong>Evolucionar</strong><p>Mejoramos cuando existe evidencia de que vale la pena.</p></li>
+</ol>
+</div>
+</section>
+
+<section id="trabajo" class="section">
+<div class="container">
+<div class="section-heading">
+<p class="eyebrow">Trabajo y evidencia</p>
+<h2>Mostramos lo que sí podemos respaldar.</h2>
+<p>Separamos producto, caso real y demostración para no vender como terminado lo que todavía es una hipótesis.</p>
+</div>
+<div class="work-grid">
+<article class="work-card"><span class="tag">Producto</span><h3>Dental Suite</h3><p>Producto reutilizable para operación dental. Su desarrollo y evolución se gestionan por separado de instalaciones reales de clientes.</p></article>
+<article class="work-card"><span class="tag">Caso real sanitizado</span><h3>Sistema interno para consultorio dental</h3><p>Trabajo técnico presentado sin datos clínicos ni información privada.</p></article>
+<article class="work-card"><span class="tag">Demostración</span><h3>Raíz Verde</h3><p>Demo ficticia utilizada para mostrar experiencia de producto e interfaz. No se presenta como cliente real.</p></article>
+</div>
+</div>
+</section>
+
+<section class="section about">
+<div class="container about-grid">
+<div>
+<p class="eyebrow">Casa Lógos</p>
+<h2>Una práctica de desarrollo con criterio y claridad.</h2>
+</div>
+<div>
+<p>Casa Lógos es una casa de desarrollo dirigida por Alexis Bustamante. La tecnología se explica de forma comprensible, sin fingir un equipo o una capacidad que no existe.</p>
+<p class="principle">Sin presión. Sin sorpresas.</p>
+</div>
+</div>
+</section>
+
+<section id="contacto" class="contact section">
+<div class="container contact-box">
+<div>
+<p class="eyebrow">Contacto</p>
+<h2>¿Qué necesitas resolver?</h2>
+<p>El canal público de contacto todavía no está configurado en esta versión de prueba.</p>
+</div>
+<span class="pending">Contacto pendiente de habilitar</span>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer-inner">
+<span>Casa Lógos · Una casa de desarrollo</span>
+<span>@casalogosdev</span>
+</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
