@@ -95,8 +95,10 @@ h2{font-size:clamp(2.4rem,4vw,4.2rem);line-height:1.02;letter-spacing:-.03em;mar
 .contact-copy>p:not(.eyebrow):not(.contact-note){font-size:1.08rem;margin-bottom:14px}
 .contact-note{margin:0;color:#c9d3d8;font-size:.84rem}
 .contact-actions{display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-width:260px}
-.contact-action{display:inline-flex;justify-content:center;align-items:center;min-height:54px;padding:0 22px;border-radius:10px;background:var(--white);color:var(--navy);font-weight:800;transition:transform .22s ease,box-shadow .22s ease}
-.contact-email{color:#d8e3e8;font-size:.94rem;text-decoration:underline;text-decoration-color:rgba(216,227,232,.42);text-underline-offset:4px}
+.contact-action{display:inline-flex;justify-content:center;align-items:center;min-height:54px;padding:0 22px;border-radius:10px;font-weight:800;transition:transform .22s ease,box-shadow .22s ease,background-color .22s ease}
+.contact-action-primary{background:var(--white);color:var(--navy)}
+.contact-action-secondary{border:1px solid rgba(255,255,255,.34);color:var(--white);background:transparent}
+.contact-email{color:#d8e3e8;font-size:.94rem;overflow-wrap:anywhere}
 footer{padding:34px 0 46px}
 .footer-inner{display:flex;justify-content:space-between;gap:24px;color:#556168;font-size:.9rem}
 @keyframes scroll-cue{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
@@ -105,6 +107,7 @@ footer{padding:34px 0 46px}
 .reveal-ready .reveal-target.is-visible{opacity:1;transform:none;filter:none;transition:opacity .72s cubic-bezier(.2,.7,.2,1),transform .72s cubic-bezier(.2,.7,.2,1),filter .72s ease}
 @media(hover:hover) and (pointer:fine){
 .btn:hover,.contact-action:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(14,34,51,.12)}
+.contact-action-secondary:hover{background:rgba(255,255,255,.08)}
 .card,.work-card{transition:transform .22s ease,border-color .22s ease,background-color .22s ease}
 .card:hover,.work-card:hover{transform:translateY(-4px);border-color:rgba(201,107,75,.32);background:rgba(255,255,255,.52)}
 }
@@ -144,7 +147,6 @@ h1{font-size:3.25rem}
 .contact-box{padding:32px 24px;align-items:flex-start;flex-direction:column}
 .contact-actions{width:100%;min-width:0}
 .contact-action{width:100%}
-.contact-email{overflow-wrap:anywhere}
 .footer-inner{flex-direction:column}
 }
 @media(max-width:360px){
