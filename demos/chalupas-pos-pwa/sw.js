@@ -1,6 +1,6 @@
 'use strict';
-var CACHE = 'chalupas-pos-pwa-v0.1.0';
-var APP_SHELL = ['./', './index.html', './styles.css', './core.js', './db.js', './app.js', './manifest.webmanifest', './icon.svg', './apple-touch-icon.png'];
+var CACHE = 'chalupas-pos-pwa-v0.1.1-icons';
+var APP_SHELL = ['./', './index.html', './styles.css', './core.js', './db.js', './app.js', './manifest.webmanifest', './apple-touch-icon.png', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', function (event) {
   event.waitUntil(caches.open(CACHE).then(function (cache) { return cache.addAll(APP_SHELL); }).then(function () { return self.skipWaiting(); }));
 });
