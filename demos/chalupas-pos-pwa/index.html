@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#7a2f13" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Chalupas POS" />
+  <title>Chalupas POS — Spike PWA</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">DEMO · DATOS SINTÉTICOS</p>
+      <h1>Chalupas POS</h1>
+    </div>
+    <div class="status-wrap">
+      <span id="networkStatus" class="status">Comprobando red…</span>
+      <span class="version">v0.1.0-spike</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel products-panel" aria-labelledby="productos-title">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Venta rápida</p>
+          <h2 id="productos-title">Productos demo</h2>
+        </div>
+        <button id="newSaleBtn" class="button ghost" type="button">Nueva venta</button>
+      </div>
+      <div id="productGrid" class="product-grid" aria-live="polite"></div>
+      <p class="helper">Prueba canónica: agrega 2 × Producto demo A y 1 × Producto demo B.</p>
+    </section>
+
+    <section class="panel cart-panel" aria-labelledby="pedido-title">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Pedido actual</p>
+          <h2 id="pedido-title">Carrito</h2>
+        </div>
+        <strong id="cartTotal" class="total">$0</strong>
+      </div>
+      <div id="cartList" class="cart-list empty-state">Toca un producto para comenzar.</div>
+      <div class="payment-box">
+        <label for="receivedAmount">Efectivo recibido</label>
+        <div class="money-row">
+          <span>$</span>
+          <input id="receivedAmount" inputmode="decimal" type="number" min="0" step="1" value="0" />
+        </div>
+        <div class="quick-cash" aria-label="Montos rápidos">
+          <button type="button" data-cash="50">$50</button>
+          <button type="button" data-cash="100">$100</button>
+          <button type="button" data-cash="200">$200</button>
+          <button type="button" data-cash="500">$500</button>
+        </div>
+        <div class="change-row">
+          <span>Cambio</span>
+          <strong id="changeAmount">$0</strong>
+        </div>
+        <button id="chargeBtn" class="button primary full" type="button" disabled>Confirmar y cobrar</button>
+      </div>
+    </section>
+
+    <section class="panel history-panel" aria-labelledby="historial-title">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Persistencia local</p>
+          <h2 id="historial-title">Ventas guardadas</h2>
+        </div>
+        <span id="saleCount" class="badge">0</span>
+      </div>
+      <div id="salesList" class="sales-list empty-state">Aún no hay ventas guardadas.</div>
+    </section>
+
+    <section class="panel recovery-panel" aria-labelledby="respaldo-title">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Recuperación</p>
+          <h2 id="respaldo-title">Respaldo y restauración</h2>
+        </div>
+      </div>
+      <p class="helper strong">IndexedDB no será la única copia de datos en producción. Este spike obliga a probar un respaldo exportable.</p>
+      <div class="button-row">
+        <button id="backupBtn" class="button secondary" type="button">Crear respaldo JSON</button>
+        <label class="button secondary file-button" for="restoreInput">Restaurar respaldo</label>
+        <input id="restoreInput" type="file" accept="application/json,.json" hidden />
+      </div>
+      <button id="resetBtn" class="button danger-text" type="button">Borrar datos demo</button>
+      <p id="storageStatus" class="storage-status">Almacenamiento: comprobando…</p>
+    </section>
+
+    <section class="panel install-panel" aria-labelledby="instalar-title">
+      <div class="section-head">
+        <div>
+          <p class="kicker">iPad</p>
+          <h2 id="instalar-title">Instalación de prueba</h2>
+        </div>
+      </div>
+      <ol class="install-steps">
+        <li>Abre esta URL en <strong>Safari</strong>.</li>
+        <li>Toca <strong>Compartir</strong> → <strong>Agregar a pantalla de inicio</strong>.</li>
+        <li>Abre “Chalupas POS” desde el ícono nuevo.</li>
+        <li>Haz una venta online, cierra la app y comprueba que persiste.</li>
+        <li>Activa modo avión y repite una venta para validar el modo offline.</li>
+      </ol>
+      <p id="installMode" class="storage-status"></p>
+    </section>
+  </main>
+
+  <dialog id="receiptDialog" class="receipt-dialog">
+    <div class="receipt-card">
+      <p class="eyebrow">VENTA DEMO GUARDADA</p>
+      <h2 id="receiptFolio">Folio</h2>
+      <dl>
+        <div><dt>Total</dt><dd id="receiptTotal">$0</dd></div>
+        <div><dt>Recibido</dt><dd id="receiptReceived">$0</dd></div>
+        <div><dt>Cambio</dt><dd id="receiptChange">$0</dd></div>
+      </dl>
+      <button id="closeReceiptBtn" class="button primary full" type="button">Listo</button>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="./core.js"></script>
+  <script src="./db.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
